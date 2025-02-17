@@ -5,11 +5,19 @@ public class App {
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
     System.out.println("Welcome to the Payroll Program!");
-    
-    System.out.print("How many hours did you work this week? ");
-    double hoursWorked = sc.nextDouble();
+
+    double hoursWorked;
+    do {
+      System.out.print("How many hours did you work this week? ");
+      hoursWorked = sc.nextDouble();
+      if (hoursWorked < 0) {
+        System.out.println("Hours worked cannot be negative. Please enter a valid number.");
+      }
+    } while (hoursWorked < 0);
+
+    int numChildren;
     System.out.print("How many children do you have? ");
-    int numChildren = sc.nextInt();
+    numChildren = sc.nextInt();
 
     double payRate;
     do {
